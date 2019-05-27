@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event-js</title>
+</head>
+<body>
+  <style>
+  
+  div {
+    width: 50px;
+    height: fit-content;
+    box-shadow: 1px 1px 5px   1px rebeccapurple;
+    padding: 0 5px;
+    user-select: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .click {
+    box-shadow: 2px 2px 5px 1px red;
+  }
+  </style>
+
+    <div  id="test1" onclick="_click(1, 'test1');">like</div>
+    <h1></h1>
+    <div  id="test2" onclick="_click(-1, 'test2');">dislike</div>
+
+  </body>
+<script>
+
+function _click(i,id) {
+  let n = +document.querySelector('h1').innerText;
+  n += i;
+  
+  document.querySelector('h1').innerText = n;
+  let b = document.querySelector('.click');
+  if (b) b.classList.remove('click');
+  document.querySelector(`#${id}`).classList.toggle('click');
+};
+
+
+
+</script>
+
+
+</html>
